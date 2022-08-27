@@ -30,7 +30,7 @@ $ cd elk
 $ docker-compose up
 ```
 
-5. Go to http://localhost:5601/ to configure `index patterns` for `logstash-*` with `@timestamp`, and then logs can be explored in `discover`:
+5. Go to http://localhost:5601/ to configure `index patterns` for `logstash-*` with `@timestamp`, and then logs can be explored:
 <p float="left">
     <img src="pix/kibana.png" width="800" />
 </p>

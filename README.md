@@ -3,7 +3,7 @@
 ## Overview
 
 <p float="left">
-    <img src="pix/pipeline.png" width="700" />
+    <img src="pix/pipeline.png" width="600" />
 </p>
 
 ## Demo
@@ -21,7 +21,7 @@ $ docker-compose up
 
 3. Go to http://localhost:8080/ to check the `kafka` cluster status w.r.t. `brokers`, `topics`, `consumers`, and `schema registry`:
 <p float="left">
-    <img src="pix/kafka-ui.png" width="700" />
+    <img src="pix/kafka-ui.png" width="800" />
 </p>
 
 4. Start all the `elk` services:
@@ -32,7 +32,7 @@ $ docker-compose up
 
 5. Go to http://localhost:5601/ to configure `index patterns` for `logstash-*` with `@timestamp`, and then logs can be explored in `discover`:
 <p float="left">
-    <img src="pix/kibana.png" width="700" />
+    <img src="pix/kibana.png" width="800" />
 </p>
 
 6. To explore more about `producer`, `consumer`, and `zookeeper` in the host console:

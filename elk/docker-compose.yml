@@ -1,0 +1,62 @@
+---
+version: '2'
+
+services:
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:6.4.0
+    container_name: filebeat
+    mem_limit: 1g
+    volumes:
+      - "./filebeat.yml:/usr/share/filebeat/filebeat.yml:ro"
+      - "./apache-logs:/usr/share/filebeat/apache-logs"
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:6.4.0
+    container_name: logstash
+    depends_on:
+      - elasticsearch
+    ports:
+      - "5044:5044"
+      - "5000:5000/tcp"
+      - "5000:5000/udp"
+      - "9600:9600"
+    restart: always
+    volumes:
+      - "./logstash.yml:/usr/share/logstash/config/logstash.yml"
+      - "./logstash.conf:/usr/share/logstash/pipeline/logstash.conf"
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
+    hostname: elasticsearch
+    container_name: elasticsearch
+    ports:
+      - "9200:9200"
+    environment:
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    mem_limit: 1g
+    volumes:
+      - "./esdata:/usr/share/elasticsearch/data"
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.4.0
+    hostname: kibana
+    container_name: kibana
+    depends_on:
+      - elasticsearch
+    ports:
+      - "5601:5601"
+    restart: always
+    volumes:
+      - "./kibana.yml:/usr/share/kibana/config/kibana.yml"
+
+networks:
+  default:
+    external:
+      name: kafka-elk-shared-network

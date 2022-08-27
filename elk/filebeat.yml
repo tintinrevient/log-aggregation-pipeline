@@ -1,0 +1,10 @@
+filebeat.inputs:
+  - type: log
+    paths:
+      - ./apache-logs/logstash-tutorial.log
+
+output.kafka:
+  hosts: ["broker:9092"]
+  topic: "filebeat"
+  codec.json:
+    pretty: false

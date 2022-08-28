@@ -55,8 +55,8 @@ ls /brokers/ids
 * https://github.com/confluentinc/kafka-tutorials/
 * https://github.com/confluentinc/kafka-tutorials/blob/master/_includes/tutorials/aggregating-sum/ksql/code/docker-compose.yml
 * https://stackoverflow.com/questions/35832095/difference-between-links-and-depends-on-in-docker-compose-yml
+* https://stackoverflow.com/questions/43309737/how-can-i-see-dockerfile-for-each-docker-image
 * https://stackoverflow.com/questions/40146921/how-to-list-all-available-kafka-brokers-in-a-cluster
 * https://stackoverflow.com/questions/34393779/connect-two-instances-of-docker-compose
 * https://github.com/sermilrod/kafka-elk-docker-compose
 * https://github.com/eunsour/docker-elk
-* https://stackoverflow.com/questions/43309737/how-can-i-see-dockerfile-for-each-docker-image

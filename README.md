@@ -59,3 +59,4 @@ ls /brokers/ids
 * https://stackoverflow.com/questions/34393779/connect-two-instances-of-docker-compose
 * https://github.com/sermilrod/kafka-elk-docker-compose
 * https://github.com/eunsour/docker-elk
+* https://stackoverflow.com/questions/43309737/how-can-i-see-dockerfile-for-each-docker-image

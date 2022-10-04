@@ -46,6 +46,7 @@ ls /brokers/ids
 
 ## References
 
+* https://github.com/tintinrevient/event-driven-microservice
 * https://github.com/tintinrevient/micro-service-sharing/tree/master/log-aggregation
 * https://github.com/tintinrevient/Kafka
 * https://www.elastic.co/guide/en/logstash/current/advanced-pipeline.html
